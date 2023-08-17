@@ -1,0 +1,28 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Receipes{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>{% block header %}Welcome to Receipes{% endblock %}</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Default content for the 'content' block -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {% now "Y" %} My Website</p>
+    </footer>
+</div>
+
+</body>
+</html>

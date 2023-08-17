@@ -1,0 +1,64 @@
+<!-- receipes.html -->
+{% extends "base.html" %}
+
+{% block title %}Recipes {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h3>Here Are Some Delicious Recipes you can add and share</h3>
+</div>
+
+<div class="container mt-4 ">
+    <form method="post" class="col-6" enctype="multipart/form-data" >
+
+        {%csrf_token%}
+        <div class="mb-3">
+            <label  class="form-label">Receipe name</label>
+            <input  name="receipe_name" required class="form-control" id="exampleFormControlInput1" placeholder='enter your receipe'>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Receipe Description</label>
+            <textarea name="receipe_description"  required ="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <div class="mb-5">
+            <label for="receipe_image" class="form-label">Image of receipe</label>
+            <input class="receipe_image" required type="file"class="form-control" accept="image/*"id="receipe_image">
+          </div>
+
+          <button type="submit" class=" btn btn-success"> submitted</button>
+
+    </form>
+
+ 
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">serial no</th>
+            <th scope="col">NAME</th>
+            <th scope="col">Receipe Description</th>
+            <th scope="col">Receipe Image</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for receipe in receipes %}
+          <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{receipe.receipe_name}}</td>
+            <td>{{receipe.receipe_description}}</td>
+            <td>{{receipe.receipe_image}}</td>
+            <td>
+
+                <a href="/delete-receipe/{{receipe.id}}" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+          {%endfor%}
+        </tbody>
+      </table>
+
+
+</div>
+{% endblock %}
