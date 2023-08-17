@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="about/">About</a>
+        </li>
+        <li>
+            <a href="contact/">Contact</a>
+        </li>
+    </div>
+    <h1>hey this is my first project using django</h1>
+    <p> im very exisited to do this project</p>
+
+    
+    <div>
+
+        <h4>data that is stored in backend</h4>
+        {{peoples}}
+
+    </div>
+
+
+    <div class="container">
+        <h3>Data from backend</h3>
+
+
+
+        <table>
+            <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            {%for people in peoples%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{people.name}}</td>
+                <td>{{people.age}}</td>
+
+            </tr>
+            {%endfor%}
+
+        </table>
+
+    </div>
+</body>
+</html>
