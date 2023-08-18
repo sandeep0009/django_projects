@@ -7,7 +7,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home),
     path('receipes/',receipes),
-    path('delete-receips/<int:id>/',delete_receipes)
+    path('delete-receips/<int:id>/',delete_receipes),
+    path('login/',loginPage),
+    path('register/',registerPage),
+    path('logout/',logoutPage)
 ]
 
 from django.conf import settings

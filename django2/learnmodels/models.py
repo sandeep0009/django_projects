@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -11,6 +12,7 @@ class Student(models.Model):
         return f'{self.name} (Section: {self.section}, Grade: {self.grade})'
     
 class Veggies(models.Model):
+    user=models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)
    
     receipe_name=models.CharField(max_length=150)
     receipe_description=models.TextField()

@@ -5,17 +5,19 @@
 
 
 {% block content %}
+{{request.user }}
+
 <div class="container">
     <h3>Here Are Some Delicious Recipes you can add and share</h3>
 </div>
 
 <div class="container mt-4 ">
-    <form method="post" class="col-6" enctype="multipart/form-data" >
+    <form method="post" class="col-6 mx-auto card p-3" enctype="multipart/form-data" >
 
         {%csrf_token%}
         <div class="mb-3">
             <label  class="form-label">Receipe name</label>
-            <input  name="receipe_name" required class="form-control" id="exampleFormControlInput1" placeholder='enter your receipe'>
+            <input type="text"  name="receipe_name" required class="form-control" id="exampleFormControlInput1" placeholder='enter your receipe'>
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Receipe Description</label>
