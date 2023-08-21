@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(49, 22, 22);
+}
+
+.container{ 
+    margin: auto;
+    align-items: center;
+   height: 400px;
+   width: 30%;
+}
+
+.container div{
+    margin: auto;
+    align-items: center;
+}
