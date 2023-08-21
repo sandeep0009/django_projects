@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+</head>
+<body>
+
+    <h1>Welcome to BlogAPP</h1>
+
+    <div class="container">
+        <div class="row">
+            {% for posts in posts%}
+            <div class="col">
+                <h2>{{posts.title}}</h2>
+                <h6>{{posts.created_at}}</h6>
+                <p>{{posts.body|truncatewords:5}}</p>
+
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+    
+</body>
+</html>
